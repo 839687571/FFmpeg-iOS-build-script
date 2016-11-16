@@ -12,7 +12,7 @@ THIN=`pwd`/"thin"
 X264=`pwd`/fat-x264
 
 #FDK_AAC=`pwd`/../fdk-aac-build-script-for-iOS/fdk-aac-ios
-FAAC=`pwd`/fat-faac
+#FAAC=`pwd`/fat-faac
 
 CONFIGURE_FLAGS="--enable-cross-compile --disable-debug --disable-programs \
                  --disable-doc --enable-pic --disable-iconv --disable-asm --enable-small\
@@ -28,7 +28,7 @@ then
 	CONFIGURE_FLAGS="$CONFIGURE_FLAGS --enable-libfdk-aac --enable-gpl --enable-nonfree"
 fi
 
-if ["$FAAC"]
+if [ "$FAAC" ]
 then
 	CONFIGURE_FLAGS="$CONFIGURE_FLAGS --enable-libfaac --enable-gpl --enable-nonfree"
 fi
