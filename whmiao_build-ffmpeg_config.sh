@@ -1,5 +1,7 @@
 #!/bin/sh
 
+
+set -x
 # directories
 SOURCE="ffmpeg-3.2"
 FAT="FFmpeg-iOS"
@@ -36,12 +38,13 @@ fi
 # avresample
 CONFIGURE_FLAGS="$CONFIGURE_FLAGS --enable-avresample"
 
-ARCHS="x86_64"
+#add supprot iphone 6s
+ARCHS="arm64"
 
 COMPILE="y"
 LIPO="y"
 
-DEPLOYMENT_TARGET="6.0"
+DEPLOYMENT_TARGET="7.0"
 
 if [ "$*" ]
 then
