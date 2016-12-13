@@ -4,9 +4,9 @@
 set -x
 # directories
 SOURCE="ffmpeg-3.2"
-FAT="FFmpeg-iOS"
+FAT="fat-ffmpeg"
 
-SCRATCH="scratch"
+SCRATCH="scratch-ffmpeg"
 # must be an absolute path
 THIN=`pwd`/"thin"
 
@@ -39,7 +39,8 @@ fi
 CONFIGURE_FLAGS="$CONFIGURE_FLAGS --enable-avresample"
 
 #add supprot iphone 6s
-ARCHS="arm64"
+#ARCHS="arm64"
+ARCHS="arm64 x86_64 i386 armv7 armv7s"
 
 COMPILE="y"
 LIPO="y"
