@@ -18,7 +18,7 @@ X264=`pwd`/fat-x264
 
 CONFIGURE_FLAGS="--enable-cross-compile --disable-debug --disable-programs \
                  --disable-doc --enable-pic --disable-iconv --disable-asm --enable-small\
-                 --disable-ffserver"
+                 --disable-ffserver --enable-ffmpeg"
 
 if [ "$X264" ]
 then
@@ -40,7 +40,7 @@ CONFIGURE_FLAGS="$CONFIGURE_FLAGS --enable-avresample"
 
 #add supprot iphone 6s
 #ARCHS="arm64"
-ARCHS="arm64 x86_64 i386 armv7 armv7s"
+ARCHS="arm64 x86_64 i386 armv7"
 
 COMPILE="y"
 LIPO="y"
@@ -145,6 +145,7 @@ then
 		    --prefix="$THIN/$ARCH" \
 		|| exit 1
 
+		make clean
 		make -j3 install $EXPORT || exit 1
 		cd $CWD
 	done
