@@ -34,11 +34,7 @@ do
 done
 
 
-if[ "$*" ]
-then 
-	ARCHS="$*"
-fi
 
-cp -f -v SOURCESSOURCES
+cp -f tools/config.h              "$DEST_FOLDER/config.h"
 
 exit
