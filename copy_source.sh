@@ -30,11 +30,25 @@ ffmpeg.h
 
 for COPY in ${SOURCES}
 do
-	cp -f -v ./${SOURCE_FILE}/$COPY ./${DEST_FOLDER}/$COPY
+	#cp -f -v ./${SOURCE_FILE}/$COPY ./${DEST_FOLDER}/$COPY
+	echo ""
 done
 
 
 
 cp -f tools/config.h              "$DEST_FOLDER/config.h"
+
+mkdir -p $DEST_FOLDER/compat
+
+
+OHTERS="
+compat/va_copy.h
+"
+
+for COPY in ${OHTERS}
+do
+	cp -f -v ./${SOURCE_FILE}/$COPY ./${DEST_FOLDER}/$COPY
+done
+
 
 exit
